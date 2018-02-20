@@ -1,21 +1,25 @@
+var Letter = require("./letter.js");
 
-var Letter = require('./letter.js');
-var inquirer = require('inquirer');
-var prompt = require('prompt.js');
-
-// inquirer.prompt(["Guess a Letter"]).then(answers => {
-//     // Use user feedback for... whatever!!
-// });
-var Word = function(array, wordString){
-    this.array = new Letter;
-    this.wordString = function(){
-        new Letter.answer;
+var Word = function(input) {
+    var letterArr = [];
+    for (var letter in input){
+      letterArr.push(new Letter(input[letter].toLowerCase()));
+    };
+    this.word = letterArr;
+    this.string = function(){
+        var word = "";
+        for (var i = 0; i < this.word.length; i++){
+          word += this.word[i].display() + " ";
+        };
+        return word;
+    }
+    this.check = function(char){
+        for (var i = 0; i < this.word.length; i++){
+            this.word[i].compare(char);
+        }
+        return this.string();
     }
 }
-//concatinate it all into one word
 
-// Word.js: Contains a constructor, Word that depends on the Letter constructor. This is used to create an object representing the current word the user is attempting to guess. That means the constructor should define:
-//
-// An array of new Letter objects representing the letters of the underlying word
-// A function that returns a string representing the word. This should call the function on each letter object (the first function defined in Letter.js) that displays the character or an underscore and concatenate those together.
-// A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in Letter.js)
+var Ozzy = new Word("OZZY");
+console.log(Ozzy.check("z"));
