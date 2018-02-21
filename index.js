@@ -1,46 +1,50 @@
 // index.js: The file containing the logic for the course of the game, which depends on Word.js and:
 //
+// Randomly selects a word and uses the Word constructor to store it
 // Prompts the user for each guess and keeps track of the user's remaining guesses
 
 var Letter = require('./letter.js');
 var Word = require('./word.js')
 var inquirer = require('inquirer');
-var prompt = require('prompt.js');
+var prompt = require('prompt');
 
 
- 	var wordBank = ['han solo', 'kylo ren', 'chewbacca', 'luke skywalker', 'jabba the hut', 'boba fett', 'captain phasma', 'poe dameron'],
+ 	var wordBank = ['han solo', 'kylo ren', 'chewbacca', 'luke skywalker', 'jabba the hut', 'boba fett', 'captain phasma', 'poe dameron']
+
+    var randomWord = new Word(wordBank[Math.floor(Math.random()* wordBank.length)]);
     //for loop to access//guesses
     // guesses remaning
-
-
     //function to start game /reset game at the end
-    // Randomly selects a word and uses the Word constructor to store it
-    new Word(this.wordBank[Math.floor(Math.random()* this.wordBank.length)])
-
     // Prompts the user for each guess and keeps track of the user's remaining guesses - use prompt/inquirer to write this.
 
+    //take inquirerResponse, which is the users input and compare that against all the letters in randomWord that was chosen
+
+    //after we make comparison between inquirerResponse and the letters in randomWord
+
+
     inquirer.prompt([
-        // Here we create a basic text prompt.
         {
           type: "input",
-          name: "name",
+          name: "letterGuessed",
           message: "Guess a letter: "
-      }
+      }])
       .then(function(inquirerResponse) {
+          // var Ozzy = new Word("OZZY");
+          // console.log(Ozzy.check("z"));
+          // console.log(randomWord.check(inquirerResponse));
+          // console.log(randomWord.string());
 
-        if (inquirerResponse.===//all the correctly guessed letters {
+      //
+          for (var i = 0; i < randomWord.word.length; i++){
+              console.log(randomWord.word[i].char)
+        if (inquirerResponse.letterguessed==randomWord.word[i].char){
           console.log("CORRECT! ");
           console.log("You got it right! ");
           console.log("\n Now guess the next word.");
-      // //   }
-      // //   else {
-      // //     console.log("\nThat's okay " + inquirerResponse.username + ", come again when you are more sure.\n");
-      // //
-      // //
-      // //   }
-      // // });
-      // //
-      // //
-      // //
-      // //
-      //
+      } else {
+          console.log("Try again")
+          console.log(inquirerResponse)
+      }
+        }
+
+     })

@@ -21,5 +21,8 @@ var Word = function(input) {
     }
 }
 
-var Ozzy = new Word("OZZY");
-console.log(Ozzy.check("z"));
+// var Ozzy = new Word("OZZY");
+// console.log(Ozzy);
+// console.log(Ozzy.check("z"));
+
+module.exports = Word;
