@@ -6,13 +6,11 @@ var prompt = require('prompt');
 
 var guessesLeft = 10;
 
-var wordBank = ['han solo', 'kylo ren', 'chewbacca', 'luke skywalker', 'jabba the hut', 'boba fett', 'captain phasma', 'poe dameron']
-
-var wordBank = ['han solo']
+var wordBank = ['coriander', 'cardamom', 'cinnamon', 'fennel', 'sage', 'oregano', 'paprika', 'saffron']
 
 var randomWord = new Word(wordBank[Math.floor(Math.random()* wordBank.length)]);
-console.log("Welcome to Star Wars Hangman!");
-console.log("Guess a letter of the name of a Star Wars Character");
+console.log("Welcome to Hangman!");
+console.log("Guess a letter of a spice from your spice cabinet!");
 console.log("-----------------------------");
 
     startGame = function(){
@@ -31,6 +29,17 @@ console.log("-----------------------------");
 
               if (guessesLeft==0){
                   console.log("out of guesses!");
+
+                 inquirer.prompt([
+                      {
+                          name: "yesOrNo",
+                          type: "rawlist",
+                          message: "Would you like to play again?",
+                          choices: ["Y", "N"]
+                      }])
+                      if (inquirer.prompt.choices=="1"){
+                      }
+                      startGame();
                   //stop game
               } else if (!randomWord.notFinished()){
                   console.log("you won!");
@@ -39,37 +48,6 @@ console.log("-----------------------------");
                   //continue guessing
                   startGame();
               }
-
-
-
-
-
-
-
-
-              // var Ozzy = new Word("OZZY");
-              // console.log(Ozzy.check("z"));
-              // console.log(randomWord.check(inquirerResponse));
-              // console.log(randomWord.string());
-              // var letter = inquirerResponse;
-              // var myLetter = new Word(letter)
-              //
-              // myLetter.string(letter);
-              //
-              //   for (var i = 0; i < randomWord.word.length; i++){
-              //       console.log(randomWord.word[i].char)
-              //       if (inquirerResponse.letterGuessed===randomWord.word[i].char){
-              //           myLetter.check(inquirerResponse);
-              //         console.log("CORRECT! ");
-              //
-              //       } else {
-              //
-              //         // console.log(Letter.compare(inquirerResponse));
-              //         // console.log("INCORRECT! ");
-              //         // console.log("\n Guesses Left: " + guessesLeft);
-              //
-              //       }
-              //   }
             })
 
     };

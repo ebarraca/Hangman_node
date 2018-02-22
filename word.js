@@ -37,13 +37,4 @@ var Word = function(input) {
     }
 
 }
-
-//build a function
-
-// var Ozzy = new Word("RAGE AGAINST THE MACHINE");
-// console.log(Ozzy.word)
-// console.log(Ozzy.string());
-// console.log("-----------------")
-// console.log(Ozzy.check("a"));
-
 module.exports = Word;
