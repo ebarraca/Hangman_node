@@ -14,15 +14,36 @@ var Word = function(input) {
         return word;
     }
     this.check = function(char){
+
         for (var i = 0; i < this.word.length; i++){
             this.word[i].compare(char);
         }
         return this.string();
     }
+    this.getAnswer = function(){
+        console.log(this.word);
+    }
+    this.notFinished = function(){
+
+        var stillNeedsGuessing = false;
+        for (var i = 0; i < this.word.length; i++){
+            if (this.word[i].display() == "_"){
+                stillNeedsGuessing=true;
+                break;
+            }
+        }
+
+        return stillNeedsGuessing;
+    }
+
 }
 
-// var Ozzy = new Word("OZZY");
-// console.log(Ozzy);
-// console.log(Ozzy.check("z"));
+//build a function
+
+// var Ozzy = new Word("RAGE AGAINST THE MACHINE");
+// console.log(Ozzy.word)
+// console.log(Ozzy.string());
+// console.log("-----------------")
+// console.log(Ozzy.check("a"));
 
 module.exports = Word;

@@ -1,0 +1,12 @@
+//function to start game put the prompt in a function and pass through guesses left = 10
+
+//take inquirerResponse, which is the users input and compare that against all the letters in randomWord that was chosen
+
+//after we make comparison between inquirerResponse which is the users input and the letters in randomWord which is the words that were chosen then we are going to call out the function randomWord.compare(); pass through inquirerResponse (this is the parameter for our function b/c its what the user is typing in.)
+//random.compare takes care of the display it switches out the letter with the dash.
+
+//guesses left: everytime the user types in a wrong letter guesses left will decrease - guessesLeft--
+
+//then the game ends when a word is fully guessed or guessesleft = 0;
+
+//reset the game - calling out your start function again.
