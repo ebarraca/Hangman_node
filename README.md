@@ -4,7 +4,10 @@ Created Hangman using constructors, objects and Node.js that processes user inpu
 
 node modules used:
 npm install prompt
-npm install inquirerResponse
+npm install inquirer
+
+user needs to run:
+npm install before starting the game
 
 Run the index.js file from the command line to start the game.
 
