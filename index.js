@@ -30,25 +30,27 @@ console.log("-----------------------------");
               if (guessesLeft==0){
                   console.log("out of guesses!");
 
-                 inquirer.prompt([
-                      {
-                          name: "yesOrNo",
-                          type: "rawlist",
-                          message: "Would you like to play again?",
-                          choices: ["Y", "N"]
-                      }])
-                      if (inquirer.prompt.choices=="1"){
-                      }
-                      startGame();
-                  //stop game
-              } else if (!randomWord.notFinished()){
-                  console.log("you won!");
+            //     inquirer.prompt([{
+            //         type: "rawlist",
+            //         name:"yesNo",
+            //         choices:["Y", "N"]
+            //     }]);
+            //
+            //     if (inquirer.prompt.choices==="1"){
+            //     }
+            // };
+            //     startGame();
+
+                //stop game
+            } else if (!randomWord.notFinished()){
+                 console.log("you won!");
               } else {
                   console.log("you have " + guessesLeft + " guesses Left ");
                   //continue guessing
                   startGame();
               }
-            })
+          });
 
     };
+
     startGame();
