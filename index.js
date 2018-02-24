@@ -30,20 +30,21 @@ console.log("-----------------------------");
               if (guessesLeft==0){
                   console.log("out of guesses!");
 
-                  //this is where i would add code to restart the game but it didnt work properly, so i will psuedocode.
 
-                  // inquirer.prompt([
-                  //      {
-                  //          name: "yesOrNo",
-                  //          type: "rawlist",
-                  //          message: "Would you like to play again?",
-                  //          choices: ["Y", "N"]
-                  //      }])
-                  //      if (inquirer.prompt.choices=="1"){
-                  //      }
-                  //      startGame();
+                  inquirer.prompt([
+                       {
+                           name: "yesOrNo",
+                           type: "rawlist",
+                           message: "Would you like to play again?",
+                           choices: ["Y", "N"]
+                       }])
+                       .then(function(inquirerResponse) {
+                       if (inquirerResponse.yesOrNo == "Y"){
+                           guessesLeft=10;
+                           startGame();
+                       }
+                   })
 
-                  //i would run inquirer.prompt again, asking the user if they want to play again. if they do, run the function to start the game again. If not, then code continues as written below.
 
                   //stop game
               } else if (!randomWord.notFinished()){
